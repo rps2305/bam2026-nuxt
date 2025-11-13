@@ -1,118 +1,75 @@
-# Nuxt 3 GitHub Pages Scaffold Guide
+# Nuxt Minimal Starter
 
-This guide provides a ready-to-use scaffold for bootstrapping a Nuxt 3 project that ships with Tailwind CSS, Content, Image, Hints, Icon, ESLint, and DevTools enabled. It also includes the configuration needed to deploy the site to GitHub Pages.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## 1. Ideal Folder Structure
-```
-my-nuxt-app/
-├── .eslintrc.cjs
-├── .gitignore
-├── app.vue
-├── components/
-│   └── README.md
-├── content/
-│   └── index.md
-├── middleware/
-├── nuxt.config.ts
-├── package.json
-├── pages/
-│   └── index.vue
-├── plugins/
-├── public/
-├── README.md
-├── tailwind.config.ts
-├── tsconfig.json
-└── types/
+## Setup
+
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## 2. `nuxt.config.ts`
-```ts
-// nuxt.config.ts
-import { defineNuxtConfig } from 'nuxt/config'
+## Development Server
 
-export default defineNuxtConfig({
-  ssr: true,
-  typescript: {
-    strict: true
-  },
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/hints',
-    '@nuxt/icon',
-    '@nuxt/eslint',
-    '@nuxt/devtools'
-  ],
-  tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config.ts'
-  },
-  content: {
-    documentDriven: true
-  },
-  image: {
-    domains: [],
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      '2xl': 1536
-    }
-  },
-  hints: {
-    enabled: true
-  },
-  icon: {
-    provider: 'server'
-  },
-  eslint: {
-    config: {
-      stylistic: true
-    }
-  },
-  devtools: {
-    enabled: true
-  },
-  router: {
-    base: '/<REPO_NAME>/'
-  },
-  nitro: {
-    preset: 'github-pages'
-  },
-  app: {
-    head: {
-      link: [
-        { rel: 'icon', type: 'image/png', href: '/<REPO_NAME>/favicon.png' }
-      ]
-    }
-  }
-})
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-## 3. `package.json` Scripts
-```json
-{
-  "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "lint": "eslint --ext .ts,.js,.vue .",
-    "postinstall": "nuxt prepare",
-    "deploy": "nuxt build && npx gh-pages -d .output/public"
-  }
-}
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
-## 4. Deploying to GitHub Pages
-1. Commit your project and push it to a GitHub repository.
-2. Run `npm install gh-pages --save-dev` if you have not already.
-3. Update the `router.base` in `nuxt.config.ts` to match your repository name.
-4. Run `npm run deploy` to build the project and publish the `.output/public` folder to the `gh-pages` branch.
-5. In GitHub, go to **Settings → Pages** and set the source branch to `gh-pages`.
-6. Access your site at `https://<USERNAME>.github.io/<REPO_NAME>/` once the deployment completes.
+Locally preview production build:
 
-> **Tip:** For continuous deployment, add a GitHub Actions workflow that runs `npm run deploy` on pushes to your main branch.
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

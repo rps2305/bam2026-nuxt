@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Interstate';
+  src:
+    local('Interstate Light'),
+    url('/fonts/Interstate-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Interstate';
+  src:
+    local('Interstate Regular'),
+    url('/fonts/Interstate-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Interstate';
+  src:
+    local('Interstate Bold'),
+    url('/fonts/Interstate-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  src:
+    local('Merriweather Sans Light'),
+    url('/fonts/MerriweatherSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Merriweather Sans';
+  src:
+    local('Merriweather Sans SemiBold'),
+    url('/fonts/MerriweatherSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
