@@ -4,6 +4,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 const repoBase = '/bam2026-nuxt/'
+const isProd = process.env.NODE_ENV === 'production'
+const baseURL = isProd ? repoBase : '/'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -18,20 +20,17 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   app: {
-    baseURL: repoBase,
+    baseURL,
     head: {
       htmlAttrs: {
         lang: 'en',
       },
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/svg+xml', href: `${baseURL}favicon.ico` },
       ],
     },
   },
   css: ['~/assets/css/tailwind.css'],
-  router: {
-    base: repoBase,
-  },
   content: {
     renderer: {
       anchorLinks: false,
